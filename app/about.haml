@@ -1,0 +1,96 @@
+:ruby
+  def render(partial)
+    Haml::Engine.new(File.read(partial)).render
+  end
+!!!
+%html{lang: "en"}
+  = render ('app/partials/head.haml')
+  %body
+    = render ('app/partials/index/_redes-sociales.haml')
+    %section.home
+      = render ('app/partials/navbar_1.haml')
+
+      %section.banner-about
+        .banner-img
+          %img.img-responsive{:src => "assets/img/about.jpg"}
+          .banner-mask
+            .banner-inf
+              %h1.wow.animated.fadeInUp{ 'data-wow-duration' => '1500ms', 'data-wow-delay' => '.2s'  } quiénes somos
+              %p.wow.animated.fadeInUp{ 'data-wow-duration' => '1500ms', 'data-wow-delay' => '.9s'  } Caderco nace hace mas de 65 años, dedicados a brindar servicios de agenciamiento aduanal para facilitar a nuestros clientes las operaciones de exportación, importación
+    %section.about
+      .container
+        .content-about
+          .card-about
+            .card-about-text
+              %p En caderco nos sentimos orgullosos con la Experiencia que hemos obtenido en el Mercado , además de contar con un personal altamente competente y comprometido en la prestación de los Servicios, estamos a orientados en Brindar servicios de excelencia para Satisfacer las Necesidades de Nuestros Clientes.
+            .card-about-img
+              %img.img-responsive{:src => "assets/img/05.jpg"}
+    
+    %section.timeline
+      %ul
+        %li.one
+          .content
+            %img{:src=>"assets/img/caderco_04.svg", :alt=>""}
+            %h2
+              %time Misión
+            %p Brindar servicios de Agenciamiento Aduanal, Agenciamiento Naviero, Operación Portuaria y Manejo de Materiales y Desechos Peligrosos mediante la implementación eficaz de nuestro Sistema de Gestión de la Calidad.
+        %li.two
+          .content
+            %img{:src=>"assets/img/caderco_05.svg", :alt=>""}
+            %h2
+              %time Visión
+            %p Posicionarnos a nivel nacional como proveedor de soluciones integrales en el área de servicios de Agenciamiento Aduanal, Agenciamiento Naviero, Operación Portuaria, Manejo de Materiales y Desechos Peligrosos.
+        %li.three
+          .content
+            %img{:src=>"assets/img/caderco_03.svg", :alt=>""}
+            %h2
+              %time Políticas de calidad
+            %p En caderco nuestro compromiso consiste en satisfacer las necesidades de nuestros clientes enmarcados en el contexto actual y orientados hacia nuestra dirección estratégica.
+        %li.four
+          .content
+            %img{:src=>"assets/img/valores1.svg", :alt=>""}
+            %h2
+              %time Valores
+            %span Honestidad
+        
+        
+    -# %section.team-about
+    -#   .container
+    -#     .row
+    -#       .col-lg-6
+    -#         .team-about-image.wow.animated.fadeInLeft{ 'data-wow-duration' => '1500ms', 'data-wow-delay' => '.2s'  }
+    -#           %img{:src=>"assets/img/team.jpg", :alt=>""}
+
+    -#       .col-lg-6
+    -#         .team-about-content.wow.animated.fadeInRight{ 'data-wow-duration' => '1500ms', 'data-wow-delay' => '.2s'  }
+    -#           .team-about-title
+    -#             %h1 Nuestro gran 
+    -#             %span equipo
+    -#           %p En nuestro equipo contamos con profesionales en las distintas formaciones, todos trabajamos bajo la misma metodología para así brindar el mejor servicio a nuentros clientes.
+    %section.team-about-slider
+      .container
+        .content-title
+          .team-about-content.wow.animated.fadeInRight{ 'data-wow-duration' => '1500ms', 'data-wow-delay' => '.2s'  }
+            .team-about-title
+              %h1 Nuestro gran 
+              %span equipo
+            %p En nuestro equipo contamos con profesionales en las distintas formaciones, todos trabajamos bajo la misma metodología para así brindar el mejor servicio a nuentros clientes.
+        - team = [{image: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",job: 'Gerente general', name: 'Carlos Sierraalta'},{image: "https://images.pexels.com/photos/325682/pexels-photo-325682.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",job: 'Gte. de Operaciones', name: 'Elder Benevides'},{image: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",job: 'Gerente Técnico', name: 'Nelson Aguilar'},{image: "https://images.pexels.com/photos/325682/pexels-photo-325682.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",job: 'Gte. de Servicios  ', name: 'Gerardo Borges'},{image: "https://images.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",job: 'Gerente', name: 'Estela Rodriguez'}]
+        .team-carousel
+          - team.each_with_index do |team, x|
+            .col-lg-3.col-md-4.content-team-card{ style: 'display:flex;justify-content:center;'}
+              .team-card
+                .team-img
+                  .team-img-content{ style: "background-image: url(#{team[:image]})" }
+                    %a{ href: '#' }
+                      .team-mask
+                        %i.fa.fa-linkedin
+                .team-content
+                  %span.job= team[:job]
+                  %span= team[:name]
+
+    -# = render ('app/partials/index/_redes-sociales.haml')
+    = render ('app/partials/index/_redes-sociales.haml')
+    = render ('app/partials/index/_footer.haml')
+    %script{src: "assets/js/redes_social.js"}
+                  

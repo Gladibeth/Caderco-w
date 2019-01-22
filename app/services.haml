@@ -1,0 +1,73 @@
+:ruby
+  def render(partial)
+    Haml::Engine.new(File.read(partial)).render
+  end
+!!!
+%html{lang: "en"}
+  = render ('app/partials/head.haml')
+  %body
+    %section.home
+      = render ('app/partials/navbar_1.haml')
+      %section.banner-project
+        .banner-img
+          
+          %img.img-responsive{:src => "assets/img/02.jpg"}
+          .banner-mask
+            .banner-inf
+              %h1.wow.animated.fadeInUp{ 'data-wow-duration' => '1500ms', 'data-wow-delay' => '.2s'  } Agenciamiento aduanal
+              -# %p.wow.animated.fadeInUp{ 'data-wow-duration' => '1500ms', 'data-wow-delay' => '.9s'  } Nuestros servicios están especializados en la ejecución de Agenciamiento aduanal, agenciamiento naviero
+              
+    %section.single-services
+      .container 
+        .row        
+          .col-lg-6
+            .single-services-carousel
+              .main
+                #slider-services.slider-projects
+                  %div.slider-item
+                    %img.p2{:src => "assets/img/07.jpg"}/
+                  %div.slider-item
+                    %img.p2{:src => "assets/img/13.jpg"}/
+                  %div.slider-item
+                    %img.p2{:src => "assets/img/15.jpg"}/
+          .col-lg-6
+            .single-services-content
+              .single-content-text
+                %h1 
+                %p Una agencia aduanal tiene como objetivo apoyar a las empresas e individuos en todo lo referente al comercio exterior, ya sea importación, exportación o cualquier otro tipo de trámite aduanal
+                %p Las funciones o servicios que brinda una agencia aduanal a través de un agente aduanal, van más allá de solo la importación y exportación de mercancías, su principal objetivo es brindar asesoría en comercio exterior con información experta que ayude a prevenir errores, reduzca tiempos y sobre todo costos.
+                %span  Dentro de sus principales funciones se encuentran
+                %ul
+                  %li Carga y descarga de Contenedores 
+                  %li Importación / exportación de productos en general
+                  %li Agenciamiento Protector para Buques 
+                  %li Desconsolidación de Cargas
+                  %li Estiba y Carga de Mercancía y Productos
+              -# .cta-service      
+              -#   %a.btn-caderco.btn{:href => "projects.html", 'data-content'=>"Nuestros Servicios"}
+              -#     %span Ver más Proyectos
+    -# %section.service#services.services
+    -#   .container
+    -#     -# .content-service-title
+    -#     -#   %h1 SERVICIOS
+    -#     -#   %p Estamos orgullosos con la experiencia que hemos obtenido en el mercado
+    -#     - services = [{image: "assets/img/03.jpg", title: 'Agenciamiento Naviero', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi laudantium eligendi sed perferendis.'},{image: "assets/img/05.jpg", title: 'Agenciamiento Aduanal', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi laudantium eligendi sed perferendis.'},{image: "assets/img/12.jpg", title: 'Manejo de materiales', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi laudantium eligendi sed perferendis.'},{image: "assets/img/12.jpg", title: 'Alquiler de Equipos y Maquinarias', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi laudantium eligendi sed perferendis.'},{image: "assets/img/12.jpg", title: 'Mantenimiento y Construcción de Obras', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi laudantium eligendi sed perferendis.'},{image: "assets/img/12.jpg", title: 'Servicios logísticos en general', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi laudantium eligendi sed perferendis.'}]
+    -#     .row
+    -#       - services.each_with_index do |service|
+    -#         %a.link-service{ 'data-wow-duration' => '1500ms', 'data-wow-delay' => '.5s',:href=>"#single-services",'data-target'=>"#single-services",'data-toggle': 'modal' }
+    -#           .col-lg-4.col-md-6.col-sm-6.mb-4{ style:'display: flex; justify-content: flex-start;'}
+    -#             .card-service
+    -#               .card-service-img
+    -#                 .card-content-img{ style: "background-image: url('#{service[:image]}')"}
+    -#                 -# %img{:alt => "img09", :src => "#{project[:image]}"}/
+    -#               .card-service-content
+    -#                 %h4.title-service= service[:title]
+    -#                 %p.description-service= service[:description]
+      
+              
+      = render ('app/partials/services/_modal-services.haml')   
+
+    = render ('app/partials/index/_redes-sociales.haml')
+    = render ('app/partials/index/_footer.haml')
+    %script{src: "assets/js/redes_social.js"}
+    

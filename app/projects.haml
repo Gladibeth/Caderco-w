@@ -1,0 +1,91 @@
+:ruby
+  def render(partial)
+    Haml::Engine.new(File.read(partial)).render
+  end
+!!!
+%html{lang: "en"}
+  = render ('app/partials/head.haml')
+  %body
+    %section.home
+      = render ('app/partials/navbar_1.haml')
+      %section.banner-project
+        .banner-img
+          
+          %img.img-responsive{:src => "assets/img/13.jpg"}
+          .banner-mask
+            .banner-inf
+              %h1.wow.animated.fadeInUp{ 'data-wow-duration' => '1500ms', 'data-wow-delay' => '.2s'  } Nuestros Proyectos
+              %p.wow.animated.fadeInUp{ 'data-wow-duration' => '1500ms', 'data-wow-delay' => '.9s'  } Estamos orgullosos con la experiencia que hemos obtenido en el mercado
+    - projects = [{image: "assets/img/07.jpg", alt: 'Proyecto 1', title: 'Proyecto 1', description: 'Carga y descarga de contenedores', ct: 'Ver más', date:''},{image: "assets/img/13.jpg", alt:'Proyecto 2',title: 'Proyecto 2', description: 'Internación de mercancía', ct: 'Ver más'}, {image: "assets/img/15.jpg", alt:'Proyecto 3',title: 'Proyecto 3', description: 'Internación de mercancía', ct: 'Ver más'},{image: "assets/img/02.jpg", alt:'Proyecto 4',title: 'Proyecto 4', description: 'Internación de mercancía', ct: 'Ver más'}, {image: "assets/img/12.jpg", alt:'Proyecto 5',title: 'Proyecto 5', description: 'Internación de mercancía', ct: 'Ver más'}]
+    %section.projects
+      .container.container-projects
+        .filters.filter-button-group
+          %ul
+            -# .content-project-title
+            -#   %h1 Experiencias
+              -# %p Estamos orgullosos con la experiencia que hemos obtenido en el mercado
+            %li.active{"data-filter" => "*"} Todos
+            %li{"data-filter" => ".aduana"} Agenciamiento aduanal
+            %li{"data-filter" => ".naviero"} Agenciamiento naviero
+            %li{"data-filter" => ".portuaria"} Operación Portuaria
+            %li{"data-filter" => ".manejo"} Manejo de materiales y desechos peligrosos
+            %li{"data-filter" => ".alquiler"} Alquiler de Equipos y Maquinarias
+            %li{"data-filter" => ".mantenimiento"} Mantenimiento y Construcción de Obras
+            %li{"data-filter" => ".logistica"} Servicios logísticos en general
+            
+        .content-projects.grid
+          .content-img
+            %figure.single-content.effect-duke.aduana.alquiler.naviero.grid-item
+              %img.p2{:src => "assets/img/07.jpg"}/
+              %figcaption
+                %p.description-project Proyecto 1
+                %a{:href => "single_project.html"}
+                -# %h4.title-project Proyecto 1
+            -# %h4 Proyecto 1
+          .content-img
+            %figure.single-content.effect-duke.manejo.mantenimiento.portuaria.grid-item
+              %img.p2{:src => "assets/img/15.jpg"}/
+              %figcaption
+                %p.description-project Proyecto 2
+                %a{:href => "single_project.html"}
+          .content-img
+            %figure.single-content.effect-duke.manejo.logistica.grid-item
+              %img.p2{:src => "assets/img/12.jpg"}/
+              %figcaption
+                %p.description-project Proyecto 3
+                %a{:href => "single_project.html"}
+          .content-img
+            %figure.single-content.effect-duke.aduana.portuaria.alquiler.grid-item
+              %img.p2{:src => "assets/img/13.jpg"}/
+              %figcaption
+                %p.description-project Proyecto 4
+                %a{:href => "single_project.html"}
+          .content-img
+            %figure.single-content.effect-duke.naviero.manejo.mantenimiento.grid-item
+              %img.p2{:src => "assets/img/02.jpg"}/
+              %figcaption
+                %p.description-project Proyecto 5
+                %a{:href => "single_project.html"}
+          .content-img
+            %figure.single-content.effect-duke.webdesign.brand.grid-item
+              %img.p2{:src => "assets/img/07.jpg"}/
+              %figcaption
+                %p.description-project Proyecto 6
+                %a{:href => "single_project.html"}
+          .content-img
+            %figure.single-content.effect-duke.manejo.aduana.grid-item
+              %img.p2{:src => "assets/img/15.jpg"}/
+              %figcaption
+                %p.description-project Proyecto 7
+                %a{:href => "single_project.html"}
+          .content-img
+            %figure.single-content.effect-duke.aduana.naviero.logistica.grid-item
+              %img.p2{:src => "assets/img/07.jpg"}/
+              %figcaption
+                %p.description-project Proyecto 8
+                %a{:href => "single_project.html"}
+        
+    
+    = render ('app/partials/index/_redes-sociales.haml')
+    = render ('app/partials/index/_footer.haml')
+    %script{src: "assets/js/redes_social.js"}

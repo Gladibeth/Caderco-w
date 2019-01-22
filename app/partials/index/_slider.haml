@@ -1,0 +1,52 @@
+-# - slider = [{image: "assets/img/11.jpg", title: 'CADERCO', description: 'La compañia anonima de representaciones comerciales'}, {image: "assets/img/03.jpg", title: 'CADERCO', description: 'Su objetivo es brindar servicios de agenciamiento aduanal'},{image: "assets/img/15.jpg", title: 'CADERCO', description: 'La compañia anonima de representaciones comerciales'}, {image: "assets/img/10.jpg", title: 'CADERCO', description: 'Su objetivo es brindar servicios de agenciamiento aduanal'}]
+.content-width
+  .slideshow
+    / Slideshow Items
+    .slideshow-items
+      .item
+        .item-image-container
+          %img.item-image{:src => "assets/img/slider1.jpg"}/
+        / Staggered Header Elements
+        .item-header
+          %span.vertical-part
+            %b CADERCO
+        / Staggered Description Elements
+        .item-description
+          %span.vertical-part
+            %b
+              La compañia anonima de representaciones comerciales
+      .item
+        .item-image-container
+          %img.item-image{:src => "assets/img/slider2.jpg"}/
+        / Staggered Header Elements
+        .item-header
+          %span.vertical-part
+            %b CADERCO
+        / Staggered Description Elements
+        .item-description
+          %span.vertical-part
+            %b
+              Su objetivo es brindar servicios de agenciamiento aduanal
+      .item
+        .item-image-container
+          %img.item-image{:src => "assets/img/slider3.jpeg"}/
+        / Staggered Header Elements
+        .item-header
+          %span.vertical-part
+            %b CADERCO
+        / Staggered Description Elements
+        .item-description
+          %span.vertical-part
+            %b
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae ipsam itaque non aliquam repellat
+              ea quibusdam
+              distinctio eveniet totam deserunt ut placeat facilis quisquam, excepturi doloremque incidunt commodi
+              vitae saepe!
+    .controls
+      %ul
+        %li.control-doct1.control{"data-index" => "0"}
+          -# %span 1
+        %li.control-doct2.control{"data-index" => "1"}
+          -# %span 2
+        %li.control-doct3.control{"data-index" => "2"}
+          -# %span 3

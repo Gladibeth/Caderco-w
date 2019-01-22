@@ -1,0 +1,228 @@
+.single-project {
+  padding: 80px 0 100px 0;
+  width: 100%;
+
+  @include respond-to(xs){
+    padding: 20px 0 50px 0;
+  }
+
+
+}
+
+.single-project-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include respond-to(xs) {
+    padding: 10px;
+  }
+  .single-content-text {
+    h1 {
+      font-family: $montserrat;
+      font-weight: 700 !important;
+      position: relative;
+      color: #252525;
+    }
+    h4 {
+      font-family: $montserrat;
+      margin: 15px 0;
+      font-weight: 600;
+    }
+    p {
+      // margin-top: 30px;
+      font-family: $lato;
+      font-size: 18px;
+      font-weight: 300;
+      text-align: justify;
+    }
+  }
+}
+.main {
+  font-family:Arial;
+  width:500px;
+  display:block;
+  margin:0 auto;
+
+  @include respond-to(xs) {
+    width: 250px !important;
+  }
+}
+
+
+#slider{
+
+  /* == Slick dots == */
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: -50px;
+    position: relative;
+  }
+
+  .slick-dots li{
+      height: 3px;
+      margin: 0 8px;
+      width: 20px;
+
+    &.slick-active {
+      button:before {
+        background-color: $main-caderco;
+        opacity: 1;
+      }
+    }
+
+    button {
+      height: 100%;
+      width: 100%;
+
+      &:before {
+        content: "";
+        background-color: $black;
+        height: 100%;
+        width: 100%;
+        opacity: 1;
+      }
+    }
+  }
+
+  /* == Slick arrows == */
+  .slick-prev, .slick-next {
+    border: 3px solid $white;
+    height: 50px;
+    width: 50px;
+    top: 130%;
+    border: 2px solid $gray;
+    // background: linear-gradient(rgba($main-caderco, 0.5) 0%, rgba($main-caderco, 0.5) 100%) !important;
+    background-repeat: repeat-y;
+    background-size: 0% 0em;
+    background-position: 0 35%;
+    transition: 600ms ease-in-out;
+    &:hover{
+      background: linear-gradient(rgba($main-caderco, 1) 0%, rgba($main-caderco, 1) 100%) !important;
+      background-size: 100% 1em;
+      color: $white;
+      border: 2px solid transparent;
+    }
+
+    @include respond-to(md) {
+      top: 87%;
+    }
+
+    @include respond-to(sm) {
+      height: 50px;
+      width: 50px;
+      top: 90.2%;
+    }
+
+    @include respond-to(xs) {
+      top: 75%;
+    }
+
+    &:before {
+      font-family: 'FontAwesome';
+    }
+  }
+
+  .slick-prev {
+    left: 70%;
+    z-index: 1;
+
+    @include respond-to(md) {
+      left: 81%;
+    }
+
+    @include respond-to(sm) {
+      left: 81%;
+    }
+
+    @include respond-to(xs) {
+      left: 50%;
+    }
+
+
+    &:before {
+      content: "\f060";
+      color: $black !important;
+    }
+
+    &:hover {
+
+      &:before {
+        content: "\f060";
+        color: $white !important;
+      }
+    }
+
+  }
+
+  .slick-next {
+    right: 1%;
+
+    @include respond-to(xl) {
+      right: 5%;
+    }
+
+    @include respond-to(sm) {
+      right: 4%;
+    }
+
+    @include respond-to(xs) {
+      right: 8%;
+    }
+
+    &:before {
+      content: "\f061";
+      color: $black !important;
+    }
+
+    &:hover {
+
+      &:before {
+        content: "\f061";
+        color: $white !important;
+      }
+    }
+
+  }
+
+  li {
+    list-style: none;
+  }
+
+}
+.slider-item{
+  width: 100%;
+  // height: 300px;
+  height: 400px;
+
+  @include respond-to(xs){
+    height: 250px !important;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+
+
+// .slider-nav{
+//   margin-top: 20px;
+//   .slider-subitem {
+//     width: 200px !important;
+//     height: 200px !important;
+    
+//     img {
+//       width: 100%;
+//       height: 100%;
+
+//       &:hover {
+//         opacity: 1;
+//       }
+//     }
+//   }
+// }

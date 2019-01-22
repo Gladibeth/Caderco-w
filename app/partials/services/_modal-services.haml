@@ -1,0 +1,27 @@
+:ruby
+  def render(partial)
+    Haml::Engine.new(File.read(partial)).render
+  end
+!!!
+/ Modal
+#single-services.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalCenterTitle", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-dialog-centered{:role => "document"}
+    .modal-content
+      .modal-body
+        .modal-content-img
+          = render ('app/partials/services/_slider-modal.haml')
+      .modal-header
+        .button-modal
+          %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+            %span{"aria-hidden" => "true"} ×
+        %h5#exampleModalCenterTitle.modal-title Agenciamiento Naviero
+        %p Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi et est veniam? At amet dignissimos ratione tenetur ex, voluptates et sequi neque dolores doloremque aperiam iure illum sunt quia quasi.
+        .content-list
+          %ul
+            %li Internación de Mercancía 
+            %li Nacionalización de Mercancía Bajo Régimen Ordinario y de Zona Libre. 
+            %li Exportación Tradicionales y No Tradicionales. Ver detalle en el Brifieng del Cliente.
+      
+          -# %img{ :alt => "fghjk", :src => "assets/img/13.jpg"}/
+
+      

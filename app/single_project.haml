@@ -1,0 +1,56 @@
+:ruby
+  def render(partial)
+    Haml::Engine.new(File.read(partial)).render
+  end
+!!!
+%html{lang: "en"}
+  = render ('app/partials/head.haml')
+  %body
+    %section.home
+      = render ('app/partials/navbar_1.haml')
+      %section.banner-project
+        .banner-img
+          
+          %img.img-responsive{:src => "assets/img/slider1.jpg"}
+          .banner-mask
+            .banner-inf
+              %h1.wow.animated.fadeInUp{ 'data-wow-duration' => '1500ms', 'data-wow-delay' => '.2s'  } Carga y descarcarga de contendenores en puerto las piedras
+              -# %p.wow.animated.fadeInUp{ 'data-wow-duration' => '1500ms', 'data-wow-delay' => '.9s'  } Nuestros servicios están especializados en la ejecución de Agenciamiento aduanal, agenciamiento naviero
+    %section.single-project
+      .container 
+        .row
+          .col-lg-6
+            .single-project-content
+              .single-content-text
+                -# %h1 Carga y descarcarga de contendenores en puerto las piedras.
+                %h4 Agenciamiento aduanal
+                %p Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quasi cum ipsum consectetur unde nulla, ab corporis fugiat porro excepturi cumque error dolores tempore numquam sunt officia minima mollitia eum!
+                %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates labore veritatis tempora saepe temporibus iste sequi et unde consequuntur eligendi a culpa animi quisquam, perferendis adipisci eius sint molestias numquam?
+                %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates labore veritatis tempora saepe temporibus iste sequi et unde consequuntur eligendi a culpa animi quisquam, perferendis adipisc
+              .cta-service.d-none.d-sm-block     
+                %a.btn-caderco.btn{:href => "projects.html", 'data-content'=>"Nuestros Servicios"}
+                  %span Ver más Proyectos
+          .col-lg-6
+            .single-project-carousel
+              .main
+                #slider.slider-projects
+                  %div.slider-item
+                    %img.p2{:src => "assets/img/07.jpg"}/
+                  %div.slider-item
+                    %img.p2{:src => "assets/img/13.jpg"}/
+                  %div.slider-item
+                    %img.p2{:src => "assets/img/15.jpg"}/
+            .cta-service.d-sm-none    
+              %a.btn-caderco.btn{:href => "projects.html", 'data-content'=>"Nuestros Servicios"}
+                %span Ver más Proyectos
+          
+                // .slider.slider-nav
+                //   %div.slider-subitem
+                //     %img.p2{:src => "assets/img/07.jpg"}/
+                //   %div.slider-subitem
+                //     %img.p2{:src => "assets/img/13.jpg"}/
+                //   %div.slider-subitem
+                //     %img.p2{:src => "assets/img/15.jpg"}/
+    = render ('app/partials/index/_redes-sociales.haml')
+    = render ('app/partials/index/_footer.haml')
+    %script{src: "assets/js/redes_social.js"})

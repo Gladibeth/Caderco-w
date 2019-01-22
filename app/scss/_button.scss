@@ -1,0 +1,70 @@
+
+.btn {
+  display: inline-flex;
+  font-family: $montserrat;
+  font-size: 16px;
+  letter-spacing: -0.1px;
+  font-weight: 700;
+  line-height: 16px;
+  text-decoration: none !important;
+  border: 2px solid #252525;
+  border-radius: inherit;
+  cursor: pointer;
+  justify-content: center;
+  padding: 16px 32px;
+  height: 48px;
+  text-align: center;
+  white-space: nowrap;
+  color: #252525;
+  
+}
+.btn-white {
+  border: 2px solid $white !important;
+  color: $white !important;
+
+  &:hover {
+    border: 2px solid transparent !important;
+  }
+}
+
+
+
+/* style 1*/
+.main-btn {
+  border-radius: 2px;
+  color: $white;
+  font-family: $montserrat;
+  padding: 10px 25px;
+  text-transform: uppercase;
+  border: 2px solid transparent;
+  transition: all ease-in-out .3s;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.btn-green {
+  background: linear-gradient(.31deg,#3cac8a .7%,#5cceac 99.3%);
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,.25);
+
+  &:hover {
+    background: linear-gradient(.31deg,#3cac8a 20.7%,#5cceac 99.3%);
+  } 
+}
+
+
+.btn-caderco{
+  background-image: linear-gradient(rgba($main-caderco, 0.5) 0%, rgba($main-caderco, 0.5) 100%);
+  background-repeat: repeat-y;
+  background-size: 0% 0em;
+  background-position: 0 65%;
+  transition: 1300ms ease;
+  &:hover{
+    background-image: linear-gradient(rgba($main-caderco, 1) 0%, rgba($main-caderco, 1) 100%);
+    background-size: 100% 1em;
+    color: $white;
+    border: 2px solid transparent;
+  }
+}
+
+

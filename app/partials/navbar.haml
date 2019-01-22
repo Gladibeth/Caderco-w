@@ -1,0 +1,26 @@
+%nav.navbar.navbar-expand-md.js-navbar-fixed#home-caderco
+  .content-nav
+    -# %a.navbar-brand.d-sm-none{:href => "index.html"} 
+    -#   %img#logo{ :src=>"assets/img/CADERCO.svg", :alt=>""}
+    %a.navbar-brand{:href => "index.html"} 
+      %img#logo{ :src=>"assets/img/CADERCO_BLANCO.svg", :alt=>""}
+    %button.navbar-toggler.p-2.border-0.hamburger.hamburger--elastic.d-none-lg{"data-toggle" => "offcanvas", :type => "button"}
+      %span.hamburger-box
+        %span.hamburger-inner
+    .offcanvas-collapse.fil#navbarNav
+      %ul.language-ul
+        %li.nav-item.nav-language
+          %a.active.language-link.language{:href => "#"} ESP
+          %a.language{:href => "#"} ENG
+      %ul.navbar-nav
+        %li.nav-item.active
+          %a.nav-link.active{:href => "#home-caderco", "data-scroll" => ""} Inicio
+        %li.nav-item
+          %a.nav-link{:href => "about.html", "data-scroll" => ""} Nosotros
+        %li.nav-item
+          %a.nav-link{:href => "#services", "data-scroll" => ""} Servicios
+        %li.nav-item
+          %a.nav-link{:href => "#projects", "data-scroll" => ""} Experiencias
+        %li.nav-item
+          %a.nav-link{:href => "#footer", "data-scroll" => ""} Contacto
+  %hr/

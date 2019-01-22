@@ -1,0 +1,26 @@
+%section.service#services
+  .container
+    .content-service-title
+      %h1 SERVICIOS
+    -#   %p Estamos orgullosos con la experiencia que hemos obtenido en el mercado
+    - services = [{image: "assets/img/03.jpg", title: 'Agenciamiento Naviero', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi laudantium eligendi sed perferendis.'},{image: "assets/img/05.jpg", title: 'Agenciamiento Aduanal', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi laudantium eligendi sed perferendis.'},{image: "assets/img/12.jpg", title: 'Manejo de materiales', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi laudantium eligendi sed perferendis.'},{image: "assets/img/03.jpg", title: 'Alquiler de Equipos y Maquinarias', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi laudantium eligendi sed perferendis.'},{image: "assets/img/12.jpg", title: 'Mantenimiento y Construcción de Obras', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi laudantium eligendi sed perferendis.'},{image: "assets/img/03.jpg", title: 'Servicios logísticos en general', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi laudantium eligendi sed perferendis.'}]
+    .row
+      .main
+        .services-carousel
+          - services.each_with_index do |service|
+            .col-lg-3.col-md-6.col-sm-6.mb-4{ style:'display: flex; justify-content: flex-start;'}
+              %a.link-service{ 'data-wow-duration' => '1500ms', 'data-wow-delay' => '.5s',:href=>"services.html",'data-target'=>"#single-services",'data-toggle': ''  }
+                .card-service
+                  .card-service-img
+                    .card-content-img{ style: "background-image: url('#{service[:image]}')"}
+                    -# %img{:alt => "img09", :src => "#{project[:image]}"}/
+                  .card-service-content
+                    %h4.title-service= service[:title]
+                    %p.description-service= service[:description]
+
+    // .cta-service
+    //   -#%button.main-btn.btn-green{ type: 'submit'} Ver más.
+      
+    //   %a.btn-caderco.btn{:href => "services.html", 'data-content'=>"Nuestros Servicios"}
+    //     %span Nuestros Servicios
+  

@@ -1,0 +1,208 @@
+
+.single-services {
+  padding: 50px 0 150px 0;
+  @include respond-to(sm) {
+    padding: 50px 0;
+  }
+}
+
+.single-services-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include respond-to(sm) {
+    margin-top: 50px;
+  }
+
+  @include respond-to(xs) {
+    margin-top: 50px;
+  }
+  .single-content-text {
+    h1 {
+      font-family: $montserrat;
+      font-weight: 700 !important;
+      position: relative;
+      color: #252525;
+    }
+    h4 {
+      font-family: $montserrat;
+      margin: 15px 0;
+    }
+    span {
+      font-family: $montserrat;
+      font-weight: 600;
+      margin:  50px 0;
+    }
+    p {
+      font-family: $lato;
+      font-size: 18px;
+      font-weight: 300;
+      text-align: justify;
+    }
+    ul{
+      margin-top: 10px;
+      li {
+        padding: 0 30px;
+        color: $gray;
+        font-family: $lato;
+        position: relative;
+        font-size: 18px;
+        font-weight: 300;
+        text-align: justify;
+        &:before{
+          position: absolute;
+          content: '';
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: $gray;
+          left: 13px;
+          top: 10px;
+        }
+      }
+    }
+  }
+}
+
+#slider-services{
+
+  /* == Slick dots == */
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: -50px;
+    position: relative;
+  }
+
+  .slick-dots li{
+      height: 3px;
+      margin: 0 8px;
+      width: 20px;
+
+    &.slick-active {
+      button:before {
+        background-color: $main-caderco;
+        opacity: 1;
+      }
+    }
+
+    button {
+      height: 100%;
+      width: 100%;
+
+      &:before {
+        content: "";
+        background-color: $black;
+        height: 100%;
+        width: 100%;
+        opacity: 1;
+      }
+    }
+  }
+
+  /* == Slick arrows == */
+  .slick-prev, .slick-next {
+    border: 3px solid $white;
+    height: 50px;
+    width: 50px;
+    top: 130%;
+    border: 2px solid $gray;
+    // background: linear-gradient(rgba($main-caderco, 0.5) 0%, rgba($main-caderco, 0.5) 100%) !important;
+    background-repeat: repeat-y;
+    background-size: 0% 0em;
+    background-position: 0 35%;
+    transition: 600ms ease-in-out;
+    &:hover{
+      background: linear-gradient(rgba($main-caderco, 1) 0%, rgba($main-caderco, 1) 100%) !important;
+      background-size: 100% 1em;
+      color: $white;
+      border: 2px solid transparent;
+    }
+
+    @include respond-to(md) {
+      top: 87%;
+    }
+
+    @include respond-to(sm) {
+      height: 50px;
+      width: 50px;
+      top: 90.2%;
+    }
+
+    @include respond-to(xs) {
+      top: 75%;
+    }
+
+    &:before {
+      font-family: 'FontAwesome';
+    }
+  }
+
+  .slick-prev {
+    left: 0%;
+    z-index: 1;
+
+    @include respond-to(md) {
+      left: 81%;
+    }
+
+    @include respond-to(sm) {
+      left: 81%;
+    }
+
+    @include respond-to(xs) {
+      left: 50%;
+    }
+
+
+    &:before {
+      content: "\f060";
+      color: $black !important;
+    }
+
+    &:hover {
+
+      &:before {
+        content: "\f060";
+        color: $white !important;
+      }
+    }
+
+  }
+
+  .slick-next {
+    left: 15%;
+
+    @include respond-to(xl) {
+      right: 5%;
+    }
+
+    @include respond-to(sm) {
+      right: 4%;
+    }
+
+    @include respond-to(xs) {
+      right: 8%;
+    }
+
+    &:before {
+      content: "\f061";
+      color: $black !important;
+    }
+
+    &:hover {
+
+      &:before {
+        content: "\f061";
+        color: $white !important;
+      }
+    }
+
+  }
+
+  li {
+    list-style: none;
+  }
+
+}
